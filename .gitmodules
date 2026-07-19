@@ -1,0 +1,6 @@
+[submodule "LightwaveExplorer"]
+	path = LightwaveExplorer
+	url = https://github.com/NickKarpowicz/LightwaveExplorer.git
+[submodule "LWE_Plotter"]
+	path = LWE_Plotter
+	url = https://github.com/MichKorz/LWE_Plotter.git
