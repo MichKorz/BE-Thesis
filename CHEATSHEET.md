@@ -18,6 +18,7 @@ To start the container with access to the RTX 5070 Ti GPU and mount the project 
 ```bash
 podman run --rm -it \
   --device nvidia.com/gpu=all \
+  --tmpfs /mnt/ramdisk:rw,exec,size=512m \
   -v ~/Projects/BE-Thesis:/workspace:z \
   be-thesis-env bash
 

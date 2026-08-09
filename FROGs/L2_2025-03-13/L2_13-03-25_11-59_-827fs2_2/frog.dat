@@ -1,0 +1,147 @@
+SHG FROG
+Grid size is 512
+ 
+*********** Test Field. ************
+Experimental FROG trace loaded from Z:\Lab 142\Osobiste\Micha³\frogscan\MeasuredFrogMaps\13-03-25\L2_13-03-25_11-59_-827fs2_2\FrogTrace.frg
+Number of delay points: 361
+Number of wavelength points: 126
+Delay spacing: 0,92 fs
+Wavelength spacing: 3,164 nm
+Center wavelength: 1143 nm
+DataOrder: Delay
+Read in as constant Wavelength bins
+ 
+Delay resampled to 3fs.
+Edge noise subtraction.
+Full spectrum noise subtraction.
+Edge noise subtraction.
+Trace center in delay found at pixel 56,21
+There were -0,8965 too many wavelength points.
+Wavelength Center at pixel 62,65
+Wavelength shift of -1,102 nm.
+ 
+--- 
+Central wavelength of retrieved field is 2284 nm.
+ 
+Basic
+1   0,033249
+2   0,012731
+3   0,0068641
+4   0,0063163
+5   0,0062133
+6   0,0061004
+7   0,006035
+8   0,005986
+9   0,0059352
+10   0,0058885
+11   0,0058548
+12   0,0058349
+13   0,0058261
+14   0,0058257
+15   0,0058307
+16   0,0058386
+17   0,0058478
+18   0,0058569
+19   0,0058653
+20   0,0058723
+21   0,005878
+22   0,0058823
+23   0,0058854
+24   0,0058875
+25   0,0058887
+26   0,0058892
+27   0,0058893
+ 
+Projections
+28   0,0055306
+29   0,0054918
+30   0,0054762
+31   0,0054666
+32   0,0055838
+33   0,0054512
+34   0,0054411
+35   0,0054372
+36   0,005435
+37   0,0055384
+38   0,0053971
+39   0,0053919
+40   0,0053908
+41   0,005391
+42   0,0055158
+43   0,0053907
+44   0,0053859
+45   0,0053843
+46   0,0053839
+47   0,0054997
+48   0,0053731
+49   0,0053681
+50   0,0053664
+ 
+Proj. - Overstep
+51   0,0053659
+52   0,0053677
+53   0,0055136
+54   0,0052779
+55   0,0054252
+56   0,0054814
+57   0,00533
+58   0,0054136
+59   0,0054227
+60   0,0053379
+61   0,005381
+62   0,0054765
+63   0,0053228
+64   0,0054111
+65   0,0054298
+66   0,0053197
+67   0,005383
+68   0,005483
+69   0,0053279
+70   0,0054117
+71   0,0054331
+72   0,0053131
+73   0,0053845
+74   0,0054923
+ 
+Proj. - Overstep
+75   0,0054252
+76   0,0053525
+77   0,0053713
+78   0,0053716
+79   0,0053724
+80   0,0053729
+81   0,0053732
+ 
+Basic
+82   0,0055098
+83   0,0055571
+84   0,0055648
+85   0,0055783
+86   0,0055959
+ 
+Projections
+87   0,0053386
+88   0,005352
+89   0,0053589
+90   0,0053629
+91   0,0053655
+92   0,0053673
+93   0,0053686
+94   0,0053696
+ 
+Expo
+95   0,0055406
+96   0,0055639
+97   0,0055858
+ 
+ 
+The minimum FROG error was 0,0052779
+ 
+**************** Retrieved Field ******************
+Temporal FWHM: 33,515 fs.
+Spectral FWHM: 203,39 nm.
+Autocorrelation FWHM: 48,27 fs.
+Time-Bandwidth Product - FWHM: 0,38455
+Time-Bandwidth Product - RMS: 0,69956
+Time-Bandwidth Product - Temporal Laplacian: 0,52468
+Time-Bandwidth Product - Spectral Laplacian: 0,61946

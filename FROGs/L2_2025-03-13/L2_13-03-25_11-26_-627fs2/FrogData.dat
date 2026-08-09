@@ -1,0 +1,22 @@
+FROG SCAN COMPLETED WITH PARAMETERS:
+PULSE SPECTRUM FWHM            95 nm
+GRID SIZE                      512
+CENTER WAVELENGTH (SET)        1135 nm
+CENTER WAVELENGTH (MEAS)       1133.76 nm
+EXPOSURE TIME                  0.0003 s
+MULTIPLIER                     2 
+
+FOURIER LIMIT FWHM             14.24 fs
+
+STAGE RESOLUTION in fs         0.95 fs
+STAGE RESOLUTION in nm         284.00 nm
+WAVELENGTH SPACING             3.164 fs
+
+WAVELENGTH LIMITS (SET)        [945, 1325] nm
+WAVELENGTH LIMITS (MEAS)       [943, 1323] nm
+DELAY LIMITS                   [-25560, 25560] nm
+delayRange                     25629 nm
+Number of delay points         181
+Number of wavelength points    121
+
+COMMENT: krysztal BBO cienki, DELAY_RANGE_FEMTOSECONDS*3, 3mm sapphire

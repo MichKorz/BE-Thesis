@@ -1,0 +1,22 @@
+FROG SCAN COMPLETED WITH PARAMETERS:
+PULSE SPECTRUM FWHM            87 nm
+GRID SIZE                      512
+CENTER WAVELENGTH (SET)        1147 nm
+CENTER WAVELENGTH (MEAS)       1146.42 nm
+EXPOSURE TIME                  0.00043 s
+MULTIPLIER                     2 
+
+FOURIER LIMIT FWHM             15.88 fs
+
+STAGE RESOLUTION in fs         1.00 fs
+STAGE RESOLUTION in nm         300.00 nm
+WAVELENGTH SPACING             3.164 fs
+
+WAVELENGTH LIMITS (SET)        [973, 1321] nm
+WAVELENGTH LIMITS (MEAS)       [972, 1320] nm
+DELAY LIMITS                   [-28500, 28500] nm
+delayRange                     28580 nm
+Number of delay points         191
+Number of wavelength points    111
+
+COMMENT: krysztal BBO cienki, DELAY_RANGE_FEMTOSECONDS*3, 1mm ZnSe

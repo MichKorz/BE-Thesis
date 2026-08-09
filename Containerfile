@@ -23,7 +23,8 @@ RUN python3 -m venv /opt/venv
 ENV PATH="/opt/venv/bin:$PATH"
 
 RUN pip install --no-cache-dir --upgrade pip && \
-    pip install --no-cache-dir --pre torch --index-url https://download.pytorch.org/whl/nightly/cu128
+    pip install --no-cache-dir --pre torch --index-url https://download.pytorch.org/whl/nightly/cu128 && \
+    pip install --no-cache-dir numpy scipy pandas LightwaveExplorer matplotlib
 
 # Domyślny katalog roboczy w kontenerze
 WORKDIR /workspace
