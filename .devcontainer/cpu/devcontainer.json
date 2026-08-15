@@ -1,11 +1,10 @@
 {
-    "name": "BE-Thesis LWE Environment",
+    "name": "BE-Thesis LWE Environment (CPU)",
     "build": {
-        "dockerfile": "../Containerfile",
+        "dockerfile": "Containerfile",
         "context": ".."
     },
     "runArgs": [
-        "--device=nvidia.com/gpu=all",
         "--tmpfs=/mnt/ramdisk:rw,exec,size=512m"
     ],
     "workspaceFolder": "/workspace",

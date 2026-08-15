@@ -1,6 +1,6 @@
 # Używamy oficjalnego obrazu NVIDIA CUDA Developer opartego na Ubuntu 24.04
 # CUDA 12.8 to minimalna wersja natywnie wspierająca architekturę Blackwell (sm_120)
-FROM nvidia/cuda:12.8.0-devel-ubuntu24.04
+FROM docker.io/nvidia/cuda:12.8.0-devel-ubuntu24.04
 
 # Wyłączenie interaktywnych monitów przy instalacji pakietów
 ENV DEBIAN_FRONTEND=noninteractive

@@ -1,0 +1,26 @@
+{
+    "name": "BE-Thesis LWE Environment",
+    "build": {
+        "dockerfile": "Containerfile",
+        "context": ".."
+    },
+    "runArgs": [
+        "--device=nvidia.com/gpu=all",
+        "--tmpfs=/mnt/ramdisk:rw,exec,size=512m"
+    ],
+    "workspaceFolder": "/workspace",
+    "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,z",
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "python.defaultInterpreterPath": "/opt/venv/bin/python",
+                "python.terminal.activateEnvironment": true,
+                "terminal.integrated.defaultProfile.linux": "bash"
+            },
+            "extensions": [
+                "ms-python.python"
+            ]
+        }
+    },
+    "remoteUser": "root"
+}

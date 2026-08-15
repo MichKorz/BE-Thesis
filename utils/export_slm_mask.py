@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # --- KONFIGURACJA ---
-JSON_PATH = "configs/run_001.json"  # Ścieżka do Twojego pliku JSON z historią runu
+JSON_PATH = "configs/run_004.json"  # Ścieżka do Twojego pliku JSON z historią runu
 OUTPUT_IMAGE = "slm_mask_1920x1080.png"
 
 # Parametry fizyczne matrycy SLM oraz okna optycznego (muszą pasować do tych z JSON/modulatora)
