@@ -1,0 +1,80 @@
+Pulse energy 1 (J): 1.6e-08
+Pulse energy 2 (J): 0
+Frequency 1 (Hz): 0
+Frequency 2 (Hz): 0
+Bandwidth 1 (Hz): 0
+Bandwidth 2 (Hz): 0
+SG order 1: 0
+SG order 2: 0
+CEP 1 (rad): 0
+CEP 2 (rad): 0
+Delay 1 (s): -2e-12
+Delay 2 (s): 0
+GDD 1 (s^-2): 0
+GDD 2 (s^-2): 0
+TOD 1 (s^-3): 0
+TOD 2 (s^-3): 0
+Phase material 1 index: 0
+Phase material 2 index: 0
+Phase material thickness 1 (mcr.): 0
+Phase material thickness 2 (mcr.): 0
+Beam 1 description: 0 0 1 0 0 0 0 0 0 0 0; 
+Beam 1 mode type: 1
+Beam 2 description: 0 0 1 0 0 0 0 0 0 0 0; 
+Beam 2 mode type: 1
+Beamwaist 1 (m): 3e-05
+Beamwaist 2 (m): 0
+x offset 1 (m): 0
+x offset 2 (m): 0
+y offset 1 (m): 0
+y offset 2 (m): 0
+z offset 1 (m): 0
+z offset 2 (m): 0
+NC angle 1 (rad): 0
+NC angle 2 (rad): 0
+NC angle phi 1 (rad): 0
+NC angle phi 2 (rad): 0
+Polarization 1 (rad): 0.785398163397448
+Polarization 2 (rad): 0
+Circularity 1: 0
+Circularity 2: 0
+Material index: 22
+Alternate material index: 0
+Crystal theta (rad): 0.872664625997165
+Crystal phi (rad): 0
+Grid width (m): 0.000512
+Grid height (m): 0
+dx (m): 2e-06
+Time span (s): 3.2e-12
+dt (s): 1.6e-15
+Thickness (m): 0.005
+dz (m): 1e-06
+Nonlinear absorption parameter: 0
+Initial carrier density (m^-3): 0
+Band gap (eV): 0
+Effective mass (relative): 0
+Drude gamma (Hz): 0
+Propagation mode: 1
+Batch mode: 0
+Batch destination: 0
+Batch steps: 1
+Batch mode 2: 0
+Batch destination 2: 0
+Batch steps 2: 1
+Sequence: 
+Fitting: 
+Fitting mode: 0
+Output base path: /mnt/ramdisk/results
+Field 1 from file type: 1
+Field 2 from file type: 0
+Field 1 file path: /mnt/ramdisk/Speck.dat
+Field 2 file path: 
+Fitting reference file path: 
+Material name: ZGP L
+Sellmeier reference: S. Das et al.., Appl. Opt. 42, 4335-4340 (2003), via refractiveindex.info fit to Lorentzians
+Chi2 reference: Laser Phys. 5(5), 1014-1019 (1995).
+Chi3 reference: APL Photonics 7, 086101 (2022)
+5.67348,2.85439e+28,2.22694e+31,62579400,2.34814e+24,3.94355e+27,5.99873e-05,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+3.65085,5.62284e+28,2.83626e+31,3789420,2.14487e+24,3.94219e+27,3.44497e-05,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+3.65085,5.62284e+28,2.83626e+31,3789420,2.14487e+24,3.94219e+27,3.44497e-05,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Code version: 2026.1

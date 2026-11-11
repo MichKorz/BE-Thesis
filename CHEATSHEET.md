@@ -6,7 +6,6 @@
 ```bash
 cd ~/Projects/BE-Thesis
 podman build -t be-thesis-env .
-
 ```
 
 ---
@@ -21,7 +20,6 @@ podman run --rm -it \
   --tmpfs /mnt/ramdisk:rw,exec,size=512m \
   -v ~/Projects/BE-Thesis:/workspace:z \
   be-thesis-env bash
-
 ```
 
 ---
@@ -32,7 +30,6 @@ If the repository has been cloned on a new machine and the submodule folders are
 
 ```bash
 git submodule update --init --recursive
-
 ```
 
 ---
@@ -40,7 +37,6 @@ git submodule update --init --recursive
 ## 3. Compiling Lightwave Explorer (Inside Container)
 
 After launching the container, the terminal will automatically open in the `/workspace` directory. Execute the following commands:
-
 ```bash
 # 1. Navigate to the LWE submodule directory
 cd LightwaveExplorer
@@ -56,7 +52,6 @@ cmake -DCLI=1 -DUSE_CUDA=1 -DCMAKE_BUILD_TYPE=Release -DCMAKE_CUDA_ARCHITECTURES
 
 # 5. Compile the binaries using all available CPU cores[cite: 1]
 cmake --build . -j$(nproc)
-
 ```
 
 ---
@@ -68,5 +63,12 @@ For the CLI executable to run properly, it requires the crystal database to be p
 ```bash
 # Copy the required database to the build directory[cite: 1]
 cp ../CrystalDatabase.txt .
+```
 
+---
+
+## 5. Run the experiment
+
+```bash
+python main.py --config ./configs/run_001.json --max_iterations 1000
 ```

@@ -1,0 +1,45 @@
+{
+  "experiment_id": "L2_StripeFitting-Baseline",
+  "config": {
+    "modulator": {
+      "module": "modulators.phase_modulator",
+      "class": "SLMModulator",
+      "kwargs": {
+        "input_path": "/mnt/ramdisk/L2_Speck_base.dat",
+        "output_path": "/mnt/ramdisk/Speck.dat",
+        "lambda_min": 1800.0,
+        "lambda_max": 3000.0,
+        "num_stripes": 80
+      },
+      "optional": {}
+    },
+    "simulator": {
+      "module": "simulators.simulator_engine",
+      "class": "LWESimulator",
+      "kwargs": {
+        "binary_path": "/workspace/LightwaveExplorer/build/LightwaveExplorer",
+        "config_path": "/mnt/ramdisk/L2_Intrapulse_ZGP.txt"
+      },
+      "optional": {}
+    },
+    "evaluator": {
+      "module": "evaluators.fitness_evaluator",
+      "class": "MidIREnergyEvaluator",
+      "kwargs": {
+        "output_path": "/mnt/ramdisk/results.zip",
+        "f_min": 10000000000000.0,
+        "f_max": 58000000000000.0
+      },
+      "optional": {}
+    },
+    "optimizer": {
+      "module": "optimizers.gwo_optimizer",
+      "class": "GreyWolfOptimizer",
+      "kwargs": {
+        "num_agents": 50,
+        "max_iterations": 20
+      },
+      "optional": {}
+    }
+  }
+}

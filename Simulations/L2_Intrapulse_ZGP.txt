@@ -8,13 +8,13 @@ SG order 1: 0
 SG order 2: 0
 CEP 1 (rad): 0
 CEP 2 (rad): 0
-Delay 1 (s): 0
+Delay 1 (s): -2.56e-13
 Delay 2 (s): 0
 GDD 1 (s^-2): 0
 GDD 2 (s^-2): 0
 TOD 1 (s^-3): 0
 TOD 2 (s^-3): 0
-Phase material 1 index: 3
+Phase material 1 index: 0
 Phase material 2 index: 0
 Phase material thickness 1 (mcr.): 0
 Phase material thickness 2 (mcr.): 0
@@ -45,10 +45,10 @@ Crystal phi (rad): 0
 Grid width (m): 0.000256
 Grid height (m): 0
 dx (m): 2e-06
-Time span (s): 5.12e-13
-dt (s): 1e-15
+Time span (s): 1.02e-12
+dt (s): 2.5e-15
 Thickness (m): 0.001
-dz (m): 1.001e-06
+dz (m): 1e-06
 Nonlinear absorption parameter: 0
 Initial carrier density (m^-3): 0
 Band gap (eV): 0
@@ -64,10 +64,10 @@ Batch steps 2: 1
 Sequence: 
 Fitting: 
 Fitting mode: 0
-Output base path: /run/user/1000/doc/0HzkHFA5P43AYaGh76Tp5A/L2_Intrapulse_ZGP
+Output base path: /mnt/ramdisk/results
 Field 1 from file type: 1
-Field 2 from file type: 1
-Field 1 file path: /run/user/1000/doc/qSJpG2P87INtFxIhzpYy6Q/Speck.dat
+Field 2 from file type: 0
+Field 1 file path: /mnt/ramdisk/Speck.dat
 Field 2 file path: 
 Fitting reference file path: 
 Material name: ZGP L

@@ -1,0 +1,80 @@
+Pulse energy 1 (J): 3.5e-09
+Pulse energy 2 (J): 0
+Frequency 1 (Hz): 0
+Frequency 2 (Hz): 0
+Bandwidth 1 (Hz): 0
+Bandwidth 2 (Hz): 0
+SG order 1: 0
+SG order 2: 0
+CEP 1 (rad): 0
+CEP 2 (rad): 0
+Delay 1 (s): 0
+Delay 2 (s): 0
+GDD 1 (s^-2): 0
+GDD 2 (s^-2): 0
+TOD 1 (s^-3): 0
+TOD 2 (s^-3): 0
+Phase material 1 index: 0
+Phase material 2 index: 0
+Phase material thickness 1 (mcr.): 0
+Phase material thickness 2 (mcr.): 0
+Beam 1 description: 0 0 1 0 0 0 0 0 0 0 0; 
+Beam 1 mode type: 1
+Beam 2 description: 0 0 1 0 0 0 0 0 0 0 0; 
+Beam 2 mode type: 1
+Beamwaist 1 (m): 5e-06
+Beamwaist 2 (m): 0
+x offset 1 (m): 0
+x offset 2 (m): 0
+y offset 1 (m): 0
+y offset 2 (m): 0
+z offset 1 (m): 0
+z offset 2 (m): 0
+NC angle 1 (rad): 0
+NC angle 2 (rad): 0
+NC angle phi 1 (rad): 0
+NC angle phi 2 (rad): 0
+Polarization 1 (rad): 0
+Polarization 2 (rad): 0
+Circularity 1: 0
+Circularity 2: 0
+Material index: 12
+Alternate material index: 0
+Crystal theta (rad): 1.5707963267949
+Crystal phi (rad): 0
+Grid width (m): 1.6e-05
+Grid height (m): 0
+dx (m): 2e-07
+Time span (s): 1.63852e-11
+dt (s): 6.5e-16
+Thickness (m): 0
+dz (m): 1e-07
+Nonlinear absorption parameter: 0
+Initial carrier density (m^-3): 0
+Band gap (eV): 0
+Effective mass (relative): 0
+Drude gamma (Hz): 0
+Propagation mode: 0
+Batch mode: 0
+Batch destination: 0
+Batch steps: 1
+Batch mode 2: 0
+Batch destination 2: 0
+Batch steps 2: 1
+Sequence: init()set(0,29.196539)for(4,1){nonlinear(d,d,d,v00/2,d)rotate(180)}set(0,28.872406)for(4,1){nonlinear(d,d,d,v00/2,d)rotate(180)}set(0,28.579508)for(4,1){nonlinear(d,d,d,v00/2,d)rotate(180)}set(0,28.315221)for(4,1){nonlinear(d,d,d,v00/2,d)rotate(180)}set(0,28.077146)for(4,1){nonlinear(d,d,d,v00/2,d)rotate(180)}set(0,27.863085)for(4,1){nonlinear(d,d,d,v00/2,d)rotate(180)}set(0,27.671006)for(4,1){nonlinear(d,d,d,v00/2,d)rotate(180)}set(0,27.499027)for(4,1){nonlinear(d,d,d,v00/2,d)rotate(180)}set(0,27.345389)for(5,1){nonlinear(d,d,d,v00/2,d)rotate(180)}set(0,27.176528)for(7,1){nonlinear(d,d,d,v00/2,d)rotate(180)}set(0,26.978096)for(10,1){nonlinear(d,d,d,v00/2,d)rotate(180)}set(0,26.757937)for(15,1){nonlinear(d,d,d,v00/2,d)rotate(180)}set(0,26.526963)for(21,1){nonlinear(d,d,d,v00/2,d)rotate(180)}set(0,26.308414)for(26,1){nonlinear(d,d,d,v00/2,d)rotate(180)}set(0,26.139268)for(32,1){nonlinear(d,d,d,v00/2,d)rotate(180)}set(0,26.032029)for(36,1){nonlinear(d,d,d,v00/2,d)rotate(180)}set(0,25.966616)for(37,1){nonlinear(d,d,d,v00/2,d)rotate(180)}set(0,25.880919)for(35,1){nonlinear(d,d,d,v00/2,d)rotate(180)}set(0,25.769186)for(34,1){nonlinear(d,d,d,v00/2,d)rotate(180)}set(0,25.638209)for(33,1){nonlinear(d,d,d,v00/2,d)rotate(180)}set(0,25.495427)for(32,1){nonlinear(d,d,d,v00/2,d)rotate(180)}set(0,25.347131)for(32,1){nonlinear(d,d,d,v00/2,d)rotate(180)}set(0,25.193692)for(31,1){nonlinear(d,d,d,v00/2,d)rotate(180)}set(0,25.044254)for(31,1){nonlinear(d,d,d,v00/2,d)rotate(180)}set(0,24.897531)for(32,1){nonlinear(d,d,d,v00/2,d)rotate(180)}set(0,24.750554)for(32,1){nonlinear(d,d,d,v00/2,d)rotate(180)}set(0,24.609105)for(32,1){nonlinear(d,d,d,v00/2,d)rotate(180)}set(0,24.474122)for(32,1){nonlinear(d,d,d,v00/2,d)rotate(180)}set(0,24.346504)for(33,1){nonlinear(d,d,d,v00/2,d)rotate(180)}set(0,24.223522)for(33,1){nonlinear(d,d,d,v00/2,d)rotate(180)}set(0,24.110224)for(34,1){nonlinear(d,d,d,v00/2,d)rotate(180)}set(0,24.004568)for(35,1){nonlinear(d,d,d,v00/2,d)rotate(180)}set(0,23.908560)for(35,1){nonlinear(d,d,d,v00/2,d)rotate(180)}set(0,23.826535)for(36,1){nonlinear(d,d,d,v00/2,d)rotate(180)}set(0,23.757848)for(37,1){nonlinear(d,d,d,v00/2,d)rotate(180)}set(0,23.705016)for(38,1){nonlinear(d,d,d,v00/2,d)rotate(180)}set(0,23.670818)for(39,1){nonlinear(d,d,d,v00/2,d)rotate(180)}set(0,23.642804)for(36,1){nonlinear(d,d,d,v00/2,d)rotate(180)}set(0,23.373262)for(17,1){nonlinear(d,d,d,v00/2,d)rotate(180)}set(0,23.044119)for(8,1){nonlinear(d,d,d,v00/2,d)rotate(180)}set(0,22.829524)for(5,1){nonlinear(d,d,d,v00/2,d)rotate(180)}set(0,22.674220)for(4,1){nonlinear(d,d,d,v00/2,d)rotate(180)}set(0,22.537747)for(4,1){nonlinear(d,d,d,v00/2,d)rotate(180)}set(0,22.390060)for(4,1){nonlinear(d,d,d,v00/2,d)rotate(180)}set(0,22.230952)for(4,1){nonlinear(d,d,d,v00/2,d)rotate(180)}set(0,22.060260)for(4,1){nonlinear(d,d,d,v00/2,d)rotate(180)}set(0,21.877868)for(4,1){nonlinear(d,d,d,v00/2,d)rotate(180)}set(0,21.683709)for(4,1){nonlinear(d,d,d,v00/2,d)rotate(180)}set(0,21.477765)for(4,1){nonlinear(d,d,d,v00/2,d)rotate(180)}set(0,21.260070)for(4,1){nonlinear(d,d,d,v00/2,d)rotate(180)}set(0,21.030708)for(4,1){nonlinear(d,d,d,v00/2,d)rotate(180)}set(0,20.789819)for(4,1){nonlinear(d,d,d,v00/2,d)rotate(180)}
+Fitting: 
+Fitting mode: 0
+Output base path: /run/user/1000/doc/fou1g65xVYAlXR5Apap15A/First_3_Forward
+Field 1 from file type: 1
+Field 2 from file type: 1
+Field 1 file path: First_3_Forward_pulse1.dat
+Field 2 file path: 
+Fitting reference file path: 
+Material name: MgO:LiNbO3
+Sellmeier reference: O. Gayer, et al., Appl. Phys. B 91, 343-348 (2008)
+Chi2 reference: Nikogosian, Nonlinear Optical Crystals - A Complete Survey, values from stoichimetric, except for d33, reduced to 26, based on https://arxiv.org/abs/2111.13796
+Chi3 reference: https://arxiv.org/abs/2111.13796
+5.65089,0.118417,0,-0.043728,89.6158,0,-117.722,0,0,0,0,0,0,-0.0197,0,0,0,0,0,0,0,0
+5.7484,0.098175,0,-0.0407384,188.917,0,-156.75,0,0,0,0,0,0,-0.0132,0,0,0,0,0,0,0,0
+5.7484,0.098175,0,-0.0407384,188.917,0,-156.75,0,0,0,0,0,0,-0.0132,0,0,0,0,0,0,0,0
+Code version: 2026.1

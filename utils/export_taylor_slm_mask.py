@@ -4,7 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # --- KONFIGURACJA ---
-JSON_PATH = "configs/run_002.json"
+JSON_PATH = "/workspace/Runs/Bluebird/TaylorFitting/ZGP_DFG-BB-TF-30_agents-640_stripes.json"
 OUTPUT_IMAGE = "slm_mask_taylor_1920x1080.png"
 PREVIEW_IMAGE = "mask_preview_taylor.png"
 CONTINUOUS_PHASE_IMAGE = "continuous_phase_taylor.png"

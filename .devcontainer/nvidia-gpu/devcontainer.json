@@ -1,5 +1,5 @@
 {
-    "name": "BE-Thesis LWE Environment",
+    "name": "BE-Thesis LWE Environment (GPU)",
     "build": {
         "dockerfile": "Containerfile",
         "context": ".."

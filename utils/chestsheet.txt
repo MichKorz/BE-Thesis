@@ -1,0 +1,3 @@
+apply_best_phase: python apply_best_phase.py ../Runs/L2/TaylorFitting/ZGP_DFG-L2-GWO-30_agents-TF-160_stripes.json ../Runs/L2/ramdisk/Speck_L2-hr.dat --speck_out ./Best
+
+python apply_best_phase.py ../Runs/L2/TaylorFitting/0-10/ZGP_8mm_DFG-L2-GWO-20_agents-TF-160_stripes.json ./Speck_L2_16k-hz.dat --speck_out ./ZGP_8mm_DFG-L2-GWO-20_agents-TF-160_stripes.dat

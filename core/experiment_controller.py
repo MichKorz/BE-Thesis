@@ -67,23 +67,78 @@ class ExperimentController:
         if self.history:
             self.optimizer.load_state(self.history)
 
+    def _generate_best_speck(self, zip_path, output_speck_path):
+        import LightwaveExplorer as lwe
+        try:
+            symulacja = lwe.load(zip_path, True)
+            srodek_x = symulacja.Nspace // 2
+
+            if len(symulacja.Ext_x.shape) == 2:
+                E_t = symulacja.Ext_x[:, srodek_x]
+            else:
+                E_t = symulacja.Ext_x[:, srodek_x].flatten()[:symulacja.Ntime]
+
+            indeks_szczytu = np.argmax(np.abs(E_t))
+            E_t_wycentrowane = np.roll(E_t, -indeks_szczytu)
+
+            E_f = np.fft.fft(E_t_wycentrowane)
+            E_f_dodatnie = E_f[1:symulacja.Nfreq]
+            czestotliwosci = symulacja.frequencyVectorSpectrum[1:]
+
+            max_amplituda = np.max(np.abs(E_f_dodatnie))
+            if max_amplituda > 0:
+                E_f_norm = E_f_dodatnie / max_amplituda
+            else:
+                E_f_norm = E_f_dodatnie
+
+            intensywnosc = np.abs(E_f_norm)**2
+            faza = np.unwrap(np.angle(E_f_norm))
+            czesc_rzeczywista = np.real(E_f_norm)
+            czesc_urojona = np.imag(E_f_norm)
+
+            dlugosc_fali_nm = (299792458.0 / czestotliwosci) * 1e9
+            dane = np.column_stack((dlugosc_fali_nm, intensywnosc, faza, czesc_rzeczywista, czesc_urojona))
+
+            sort_idx = np.argsort(dane[:, 0])
+            dane_posortowane = dane[sort_idx]
+            np.savetxt(output_speck_path, dane_posortowane, fmt='%1.6e', delimiter='\t')
+            return True
+        except Exception as e:
+            print(f"[Błąd generowania Speck.dat z zip] {e}")
+            return False
+
     def run(self, max_iterations):
         self.state["status"] = "running"
         self._save_json()
         
         visualizer = ExperimentVisualizer()
         
-        # Wczytanie oryginalnego pliku wejściowego do wizualizatora
         original_pulse_data = np.loadtxt(self.modulator.input_path)
+        
+        print("Obliczanie przebiegu bazowego (Baseline)...")
+        zero_vector = [0.0] * len(self.modulator.get_bounds())
+        self.modulator.apply_phase(zero_vector)
+        self.simulator.run()
+        
+        base_zip_path = os.path.join(os.path.dirname(self.evaluator.output_path), "base/results.zip")
+        base_speck_path = "/mnt/ramdisk/base_Speck.dat"
+        if os.path.exists(self.evaluator.output_path):
+            shutil.copy2(self.evaluator.output_path, base_zip_path)
+            self._generate_best_speck(base_zip_path, base_speck_path)
+            print(f"Zapisano wyniki bazowe do: {base_zip_path}")
+            
+        base_out_pulse_data = None
+        if os.path.exists(base_speck_path):
+            base_out_pulse_data = np.loadtxt(base_speck_path)
         
         best_result_data = None
         best_modified_data = None
+        
         if self.state["best_vector"] is not None:
-            wl, orig_int, final_phase = self.modulator.apply_phase(self.state["best_vector"])
+            self.modulator.apply_phase(self.state["best_vector"])
             self.simulator.run()
             fit, f, s, p = self.evaluator.evaluate()
             best_result_data = {"freq": f, "spec": s, "phase": p, "fitness": fit}
-            # Odczyt zmodyfikowanej macierzy po restarcie z dysku
             best_modified_data = np.loadtxt(self.modulator.output_path)
             
         while self.state["current_iteration"] < max_iterations:
@@ -91,22 +146,24 @@ class ExperimentController:
             iteration = self.state["current_iteration"] + 1
             
             population = self.optimizer.ask()
-            evaluation_results = []
+            pop_size = len(population)
             
+            evaluations = []
             iter_best_fitness = float('-inf')
             iter_best_mask = None
-            iter_best_result = None
             
             for eval_id, vector in enumerate(population):
                 eval_start_time = time.time()
                 
-                wl, orig_int, final_phase = self.modulator.apply_phase(vector)
+                self.modulator.apply_phase(vector)
                 
                 self.simulator.run()
                 fitness, f, s, p = self.evaluator.evaluate()
                 execution_time = int((time.time() - eval_start_time) * 1000)
                 
-                evaluation_results.append({
+                modified_data = np.loadtxt(self.modulator.output_path)
+                
+                evaluations.append({
                     "id": eval_id,
                     "vector": vector,
                     "fitness": fitness,
@@ -115,35 +172,52 @@ class ExperimentController:
                 
                 if fitness >= iter_best_fitness:
                     iter_best_fitness = fitness
-                    # Wczytanie z dysku po aplikacji fazy, przed wysłaniem do wizualizatora
-                    iter_best_mask = np.loadtxt(self.modulator.output_path)
-                    iter_best_result = {"freq": f, "spec": s, "phase": p, "fitness": fitness}
+                    iter_best_mask = modified_data
                 
                 if fitness > self.state["best_fitness"]:
                     self.state["best_fitness"] = fitness
                     self.state["best_vector"] = vector
-                    best_result_data = iter_best_result
-                    best_modified_data = iter_best_mask
+                    best_result_data = {"freq": f, "spec": s, "phase": p, "fitness": fitness}
+                    best_modified_data = modified_data
+                    
+                    best_speck_path = "/mnt/ramdisk/best_Speck.dat"
+                    # Otwiera archiwa na bieżąco, aby nie nadpisać ich w kolejnej iteracji
+                    if os.path.exists(self.evaluator.output_path):
+                        self._generate_best_speck(self.evaluator.output_path, best_speck_path)
+                
+                elapsed_time = time.time() - iteration_start_time
+                progress_pct = ((eval_id + 1) / pop_size) * 100
+                print(f"\rGeneracja {iteration}/{max_iterations} | Postęp: {progress_pct:.1f}% | Czas bieżący: {elapsed_time:.1f}s", end="", flush=True)
 
-            fitness_values = [res["fitness"] for res in evaluation_results]
+            print()
+
+            evaluations.sort(key=lambda x: x["id"])
+            fitness_values = [res["fitness"] for res in evaluations]
+            
             self.optimizer.tell(population, fitness_values)
             
             self.history.append({
                 "iteration": iteration,
                 "iteration_time_s": time.time() - iteration_start_time,
-                "evaluations": evaluation_results
+                "evaluations": evaluations
             })
             
             self.state["current_iteration"] = iteration
             self._save_json()
+
+            best_out_pulse_data = None
+            if os.path.exists("/mnt/ramdisk/best_Speck.dat"):
+                best_out_pulse_data = np.loadtxt("/mnt/ramdisk/best_Speck.dat")
             
             visualizer.update_plot(
                 iteration=iteration,
                 max_iterations=max_iterations,
                 history=self.history,
-                modified_pulse_data=iter_best_mask,
                 original_pulse_data=original_pulse_data,
-                best_result_data=best_result_data,
+                best_modified_pulse_data=best_modified_data,
+                base_out_pulse_data=base_out_pulse_data,
+                best_out_pulse_data=best_out_pulse_data,
+                best_fitness_val=self.state["best_fitness"],
                 eval_f_min=self.evaluator.f_min,
                 eval_f_max=self.evaluator.f_max
             )
