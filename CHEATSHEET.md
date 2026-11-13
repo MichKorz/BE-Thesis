@@ -48,7 +48,7 @@ mkdir -p build && cd build
 rm -rf *
 
 # 4. Configure CMake for the Blackwell architecture (sm_120)[cite: 1]
-cmake -DCLI=1 -DUSE_CUDA=1 -DCMAKE_BUILD_TYPE=Release -DCMAKE_CUDA_ARCHITECTURES=120 ..
+cmake -DCLI=1 -DUSE_CUDA=1 -DFP32=1 -DCMAKE_BUILD_TYPE=Release -DCMAKE_CUDA_ARCHITECTURES=120 ..
 
 # 5. Compile the binaries using all available CPU cores[cite: 1]
 cmake --build . -j$(nproc)
